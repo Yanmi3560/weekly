@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html ng-app="angularjsApp" lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorator="layout/default">
+<head>
+    <meta charset="utf-8">
+    <title>basic angularjs springboot</title>
+
+    <script th:src="@{/js/controller/basicAngularSpringBootCtrl.js}"></script>
+</head>
+
+<body layout:fragment="content">
+
+<div ng-controller="basicAngularSpringBootCtrl" ng-cloak>
+    <h1>{{title}}</h1>
+
+    <input type="text" ng-model="inputText" ng-change="changeInputText()">
+    <p>{{inputText}}</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://152.136.30.251:27017/weekly
+      username: admin
+      password: 123456
+      auto-index-creation: true
+server:
+  servlet:
+    context-path: /angularjs
+
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+  port: 8888
+
+
+
+
+
+#{"view":{"conditions":[{"operation":6,"property_key":"type_id","value":["6214e9bd3ebe94e35df23e89","6214e9bd3ebe94e35df23e88"],"logic":1}],"
+# "search":{"keywords":"","scopes":["identifier","title"]},"sort_by":"identifier","sort_type":-1}}"
+requestjsonrootbean:
+  view:
+    conditions: [{operation: 6,property_key: "type_id",logic: 1,value: ["6214e9bd3ebe94e35df23e89","6214e9bd3ebe94e35df23e88"]}]
+    search:
+      keywords: ""
+      scopes:
+        - "identifier"
+        - "title"
+    sort_by: "identifier"
+    sort_type: -1
+
+product:
+  productlist: ["https://at.pingcode.com/api/ship/products/6214e16fb672088420da019a/ticket/views/6267c72a9ada64c8f09572ff/content?ps=100&pi=","https://at.pingcode.com/api/ship/products/6214da6ab672088420da0174/ticket/views/626a33d39ada64c8f095861f/content?ps=100&pi="]
+
+usercookie:
+  name: "s-5da4213e32b2020037757d74"
+  value: "ef2e4ec0256d4f60919326a9593671d1"
+
