@@ -1,6 +1,7 @@
 package com.pingcode.weekly.service.serviceImpl;
 
 import com.pingcode.weekly.pojo.target.Item;
+import com.pingcode.weekly.pojo.target.ThisWeekItem;
 import com.pingcode.weekly.service.MongodbService;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -40,6 +41,7 @@ public class MongodbServiceImpl implements MongodbService {
     public Boolean reinitialize() {
 
         mongoTemplate.dropCollection(Item.class);
+        mongoTemplate.dropCollection(ThisWeekItem.class);
         return null;
     }
 

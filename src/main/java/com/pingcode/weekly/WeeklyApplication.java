@@ -13,9 +13,6 @@ public class WeeklyApplication {
     public static void main(String[] args) {
 
      SpringApplication.run(WeeklyApplication.class, args);
-
      logger.info("WeeklyApplication start!");
-
-
     }
 }

@@ -1,18 +1,9 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://152.136.30.251:27017/weekly
-      username: admin
-      password: 123456
-      auto-index-creation: true
-server:
-  servlet:
-    context-path: /angularjs
+      uri: mongodb://admin:123456@152.136.30.251:27017/weekly
+      authentication-database: admin
 
-  thymeleaf:
-    cache: false
-    encoding: UTF-8
-  port: 8888
 
 
 
