@@ -91,7 +91,7 @@ public class MainController {
     @RequestMapping("start")
     public String start() {
 
-        if (initFlag != 0) {
+        if (initFlag == 0) {
             log.log(Level.getLevel("INFO"), "开始定时任务");
             for (String productUri : product.getProductList()) {
 
@@ -106,13 +106,23 @@ public class MainController {
                             if (item.getState().equals("处理中") && item.getTag().contains("技术支持确认")) {
                                 mongodbService.insertItem(item, "ThisWeekItem");
                             }
-
+                            if (item.getState().equals("已关闭") && item.getTag().contains("非缺陷问题") && (!(mongodbService.getItemById(item.get_id()).getState().equals("已关闭")) || !(mongodbService.getItemById(item.get_id()).getTag().contains("非缺陷问题")))) {
+                                mongodbService.insertItem(item, "ThisWeekItem");
+                            }
 
                         } else {
 
                             if (item.getState().equals("处理中") && item.getTag().contains("技术支持确认") && (!(mongodbService.getItemById(item.get_id()).getState().equals("处理中")) || !(mongodbService.getItemById(item.get_id()).getTag().contains("技术支持确认")))) {
                                 mongodbService.insertItem(item, "ThisWeekItem");
                             }
+                            if (item.getState().equals("已关闭") && item.getTag().contains("非缺陷问题") && (!(mongodbService.getItemById(item.get_id()).getState().equals("已关闭")) || !(mongodbService.getItemById(item.get_id()).getTag().contains("非缺陷问题")))) {
+                                mongodbService.insertItem(item, "ThisWeekItem");
+                            }
+
+                            if (item.getType().equals("技术支持") && (!(item.getState().equals(mongodbService.getItemById(item.get_id()).getState())))) {
+                                mongodbService.insertItem(item, "ThisWeekItem");
+                            }
+
                             mongodbService.updateItem(item);
                         }
                     }
@@ -134,9 +144,7 @@ public class MainController {
     }
 
 
-
-
-    }
+}
 
 
 

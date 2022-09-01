@@ -4,8 +4,12 @@ spring:
       uri: mongodb://admin:123456@152.136.30.251:27017/weekly
       authentication-database: admin
 
-
-
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb://admin:123456@152.136.30.251:27017/weeklyTest
+#      authentication-database: admin
+#
 
 
 

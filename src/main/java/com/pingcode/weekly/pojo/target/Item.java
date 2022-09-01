@@ -42,6 +42,7 @@ public class Item {
     private String created_by;
     //工作项创建时间
     private String created_at;
-
+    //产品名称
+    private String products_name;
 
 }

@@ -29,5 +29,7 @@ public interface DataProcessingService {
 
     //获取最后评论者名字
     String getMemberName(String id);
+    //获取产品名称
+    String getProductName(String id);
 
 }

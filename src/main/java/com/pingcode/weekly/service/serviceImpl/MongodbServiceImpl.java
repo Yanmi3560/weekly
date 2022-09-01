@@ -1,14 +1,23 @@
 package com.pingcode.weekly.service.serviceImpl;
 
+
+import com.mongodb.client.FindIterable;
 import com.pingcode.weekly.pojo.target.Item;
 import com.pingcode.weekly.pojo.target.ThisWeekItem;
 import com.pingcode.weekly.service.MongodbService;
+import org.bson.BsonDocument;
+import org.bson.Document;
+import org.bson.codecs.configuration.CodecRegistry;
+import org.bson.conversions.Bson;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.nio.charset.StandardCharsets;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -76,6 +85,7 @@ public class MongodbServiceImpl implements MongodbService {
     public List<Item> getAllThisWeekItems(String connection) {
 
         return mongoTemplate.findAll(Item.class, connection);
+
     }
 
 

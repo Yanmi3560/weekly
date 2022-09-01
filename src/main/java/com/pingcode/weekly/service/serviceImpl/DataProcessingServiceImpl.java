@@ -112,6 +112,7 @@ public class DataProcessingServiceImpl implements DataProcessingService {
 
             item.setCreated_by(getMemberName(value.getCreated_by()));
             item.setCreated_at(String.valueOf(value.getCreated_at()));
+            item.setProducts_name(getProductName(value.getProduct_id()));
 
             items.add(item);
         }
@@ -216,6 +217,18 @@ public class DataProcessingServiceImpl implements DataProcessingService {
             }
         }
         return "空";
+    }
+
+    @Override
+    public String getProductName(String id) {
+
+        for (Products product : references.getProducts()) {
+
+            if (id.equals(product.get_id())) {
+               return product.getName();
+            }
+        }
+        return "未知产品";
     }
 
 
