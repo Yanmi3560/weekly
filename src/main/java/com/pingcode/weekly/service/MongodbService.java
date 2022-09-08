@@ -20,6 +20,9 @@ public interface MongodbService {
 
     String updateItem(Item item);
 
+    String updateItem(Item item,String connection);
+
+
     List<Item> getAllThisWeekItems(String connection);
 
 

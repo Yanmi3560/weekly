@@ -9,7 +9,7 @@ spring:
 #    mongodb:
 #      uri: mongodb://admin:123456@152.136.30.251:27017/weeklyTest
 #      authentication-database: admin
-#
+
 
 
 

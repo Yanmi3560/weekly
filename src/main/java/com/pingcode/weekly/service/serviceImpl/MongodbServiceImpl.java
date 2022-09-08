@@ -77,7 +77,14 @@ public class MongodbServiceImpl implements MongodbService {
     @Override
     public String updateItem(Item item) {
 
+
         Item save = mongoTemplate.save(item);
+        return null;
+    }
+    @Override
+    public String updateItem(Item item,String connection) {
+
+        Item save = mongoTemplate.save(item,connection);
         return null;
     }
 

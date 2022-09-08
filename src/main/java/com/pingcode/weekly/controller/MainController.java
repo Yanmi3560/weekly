@@ -1,10 +1,7 @@
 package com.pingcode.weekly.controller;
-
-
 import com.alibaba.fastjson.JSON;
 import com.pingcode.weekly.pojo.origin.Shipitems;
 import com.pingcode.weekly.pojo.target.Item;
-
 import com.pingcode.weekly.pojo.target.Product;
 import com.pingcode.weekly.pojo.target.request.RequestJsonRootBean;
 import com.pingcode.weekly.service.DataCaptureService;
@@ -17,9 +14,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
-import java.util.Timer;
 
 @Log4j2
 @Controller
@@ -120,6 +115,9 @@ public class MainController {
                             }
 
                             if (item.getType().equals("技术支持") && (!(item.getState().equals(mongodbService.getItemById(item.get_id()).getState())))) {
+                                mongodbService.insertItem(item, "ThisWeekItem");
+                            }
+                            if ((item.getTag().contains("超时工单") && !(mongodbService.getItemById(item.get_id()).getTag().contains("超时工单")))) {
                                 mongodbService.insertItem(item, "ThisWeekItem");
                             }
 
