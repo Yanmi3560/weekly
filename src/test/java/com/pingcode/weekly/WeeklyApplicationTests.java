@@ -65,7 +65,7 @@ class WeeklyApplicationTests {
         int j = 0;
         int k = 0;
         System.out.println("===========================================================================");
-        System.out.println("=============================技术支持类型工单处理=============================");
+        System.out.println("\n\n技术支持类型工单处理\n");
         for (Item item : thisWeekItems) {
             if (item.getType().contains("技术支持")) {
                 i++;
@@ -79,7 +79,7 @@ class WeeklyApplicationTests {
                 System.out.println();
             }
         }
-        System.out.println("=================================确认缺陷工单处理=============================");
+        System.out.println("\n\n确认缺陷工单处理:\n");
         for (Item item : thisWeekItems) {
             if (item.getType().contains("缺陷")&& !item.getTag().contains("超时工单")) {
                 j++;
@@ -94,7 +94,7 @@ class WeeklyApplicationTests {
             }
         }
 
-        System.out.println("=================================超时工单处理=============================");
+        System.out.println("超时工单处理:\n\n");
         for (Item item : thisWeekItems) {
             if (item.getTag().contains("超时工单")) {
                 k++;
@@ -120,7 +120,7 @@ class WeeklyApplicationTests {
 
     }
     String outputItem (Item item){
-        return "【"+item.getCompany().trim() +"  "+item.getCompany_groups().trim()+"】"+"【" + item.getProducts_name() + "】"+ "\t" + item.getTitle() + "\t" + "\t【" + item.getState()+"】" ;
+        return "【"+item.getCompany().trim() +"  "+item.getCompany_groups().trim()+"】"+"【" + item.getProducts_name().trim() + "】"+ "   " + StringUtils.substringBeforeLast(item.getTitle(), "@").trim() + "   " + "【" + item.getState().trim()+"】" ;
 
     }
 
