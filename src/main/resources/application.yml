@@ -1,13 +1,13 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://admin:123456@152.136.30.251:27017/weekly
+      uri: mongodb://admin:123456@xxx.xxx.xxx.xxx:27017/weekly
       authentication-database: admin
 
 #spring:
 #  data:
 #    mongodb:
-#      uri: mongodb://admin:123456@152.136.30.251:27017/weeklyTest
+#      uri: mongodb://admin:123456@xxx.xxx.xxx.xxx:27017/weeklyTest
 #      authentication-database: admin
 
 
@@ -30,6 +30,6 @@ product:
   productlist: ["https://at.pingcode.com/api/ship/products/6214e16fb672088420da019a/ticket/views/6267c72a9ada64c8f09572ff/content?ps=100&pi=","https://at.pingcode.com/api/ship/products/6214da6ab672088420da0174/ticket/views/626a33d39ada64c8f095861f/content?ps=100&pi="]
 
 usercookie:
-  name: "s-5da4213e32b2020037757d74"
-  value: "ef2e4ec0256d4f60919326a9593671d1"
+  name: "xxx"
+  value: "xxx"
 
